@@ -2,7 +2,7 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI += "\
     file://qemuarm.dts \
-    file://squashfs.cfg \
+    file://dm-verity.cfg \
 "
 
 do_configure:append() {

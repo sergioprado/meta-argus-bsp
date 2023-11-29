@@ -1,4 +1,4 @@
 part /boot --source bootimg-partition --ondisk sda --fstype=ext4 --use-uuid --label boot --active --align 1024
-part / --source rootfs --use-uuid --ondisk sda --fstype=squashfs --fixed-size 256M
-part --source rootfs --use-uuid --ondisk sda --fstype=squashfs --fixed-size 256M
+part / --source rawcopy --ondisk sda --sourceparams="file=${IMGDEPLOYDIR}/${DM_VERITY_IMAGE}-${MACHINE}.${DM_VERITY_IMAGE_TYPE}.verity"
+part --source rawcopy --ondisk sda --sourceparams="file=${IMGDEPLOYDIR}/${DM_VERITY_IMAGE}-${MACHINE}.${DM_VERITY_IMAGE_TYPE}.verity"
 part /data --ondisk sda --use-uuid --fstype=ext4 --label data --fixed-size 512M
